@@ -79,12 +79,12 @@ const ProductDetail = () => {
 
   // New function: Handle WhatsApp order
   const handleWhatsAppOrder = () => {
-    const phoneNumber = '212615286898'; // Your WhatsApp number
+    const phoneNumber = '212632254523'; // Your WhatsApp number
 
     // Construct receipt-like message for single product
-    let message = `🛒 *Commande - Endalleys*\n\n`;
-    message += `📋 *Détails du Produit:*\n`;
-    message += `• *ID:* ${product.id} | *${product.name}*\n`;
+    let message = ` Welcome to Endalleys\n\n`;
+    message += `📋 Détails du Produit:\n`;
+    message += `• ${product.name}*\n`;
     message += `  Quantité: ${quantity} | Prix unitaire: ${product.price}\n`;
     message += `  Total: ${totalPrice} DH\n\n`;
     message += `Merci pour votre commande ! 📞 Contactez-nous pour confirmer.`;

@@ -121,10 +121,10 @@ export default function Navbar() {
   const handlePlaceOrder = () => {
     if (cartItems.length === 0) return;
 
-    const phoneNumber = "212600000000"; // Change to your real number
+    const phoneNumber = "212632254523"; // Change to your real number
 
-    let message = `🛒 *Reçu de Commande - Endalleys*\n\n`;
-    message += `📋 *Détails des Produits:*\n`;
+    let message = ` Welcome to Endalleys\n\n`;
+    message += `📋 Détails des Produits:\n`;
     cartItems.forEach((item) => {
       const product = allProducts.find(p => p.id === item.id);
       const priceNum = parseInt(item.price.replace(" DH", ""));
@@ -132,7 +132,7 @@ export default function Navbar() {
       message += `• *${item.name}*\n`;
       message += `   Quantité: ${item.quantity} × ${item.price} = ${subtotal} DH\n\n`;
     });
-    message += `💰 *Total: ${getTotalPrice()} DH*\n\n`;
+    message += `💰 Total: ${getTotalPrice()} DH\n\n`;
     message += `Merci pour votre commande ! Nous vous contactons bientôt`;
 
     const encodedMessage = encodeURIComponent(message);

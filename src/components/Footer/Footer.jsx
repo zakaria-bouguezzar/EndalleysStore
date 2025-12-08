@@ -51,7 +51,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="#"
+            href="https://www.facebook.com/profile.php?id=100078339475852&mibextid=wwXIfr&mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-red-700 transition-all duration-300 hover:scale-110"
