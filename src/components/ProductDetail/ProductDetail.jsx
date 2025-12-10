@@ -82,6 +82,7 @@ const ProductDetail = () => {
     const phoneNumber = '212632254523'; // Your WhatsApp number
 
     // Construct receipt-like message for single product
+    
     let message = ` Welcome to Endalleys\n\n`;
     message += `📋 Détails du Produit:\n`;
     message += `• ${product.name}*\n`;

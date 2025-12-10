@@ -120,21 +120,33 @@ export default function Navbar() {
   // WhatsApp Order
   const handlePlaceOrder = () => {
     if (cartItems.length === 0) return;
-
-    const phoneNumber = "212632254523"; // Change to your real number
-
-    let message = ` Welcome to Endalleys\n\n`;
-    message += `📋 Détails des Produits:\n`;
+  
+    const phoneNumber = "212632254523";
+    const totalItems = getTotalItems(); // Nombre total d'articles (somme des quantités)
+  
+    let message = `Welcome to Endalleys Store*\n\n`;
+    message += `Détails des Produits :\n\n`;
+  
     cartItems.forEach((item) => {
       const product = allProducts.find(p => p.id === item.id);
       const priceNum = parseInt(item.price.replace(" DH", ""));
       const subtotal = priceNum * item.quantity;
+  
       message += `• *${item.name}*\n`;
-      message += `   Quantité: ${item.quantity} × ${item.price} = ${subtotal} DH\n\n`;
+      message += `   Quantité : ${item.quantity} × ${item.price} = ${subtotal} DH\n\n`;
     });
-    message += `💰 Total: ${getTotalPrice()} DH\n\n`;
-    message += `Merci pour votre commande ! Nous vous contactons bientôt`;
-
+  
+    message += `Total : *${getTotalPrice()} DH}*\n\n`;
+  
+    // LIVRAISON GRATUITE SI 2 PRODUITS OU PLUS
+    if (totalItems >= 2) {
+      message += `🚚 Livraison GRATUITE partout au Maroc !\n`;
+    } else {
+      message += `🚚 Livraison : 30 DH (gratuite dès 2 produits)\n`;
+    }
+  
+    message += `\nMerci pour votre confiance !\nNous vous contactons dans les plus brefs délais`;
+  
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
     setCartOpen(false);
