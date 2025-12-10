@@ -136,7 +136,7 @@ export default function Navbar() {
       message += `   Quantité : ${item.quantity} × ${item.price} = ${subtotal} DH\n\n`;
     });
   
-    message += `Total : *${getTotalPrice()} DH}*\n\n`;
+    message += `Total : *${getTotalPrice()} DH*\n\n`;
   
     // LIVRAISON GRATUITE SI 2 PRODUITS OU PLUS
     if (totalItems >= 2) {
